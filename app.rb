@@ -10,5 +10,8 @@ headlines.each do |headline|
   # `mplayer -ao alsa -really-quiet -noconsolecontrols "http://translate.google.com/translate_tts?tl=en&q=$#{URI.escape(headline.description)}"`
 
   # pico2wave doesn't sound as good. But can do whatever.
-  `pico2wave -w /home/pi/description.wav "#{headline.description}" && aplay /home/pi/description.wav`
+  # `pico2wave -w /home/pi/description.wav "#{headline.description}" && aplay /home/pi/description.wav`
+
+  # "say" works on OS X
+  `say "#{headline.description}"`
 end
